@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangri Lawn - Premium Lawn Aeration Services | South Denver Metro</title>
+    <meta name="description" content="Professional lawn aeration, fertilization, and overseeding services in Highlands Ranch, Parker, and South Denver Metro. Spring Special: $150 for all three services!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5016;
+            --accent-green: #4a7c30;
+            --light-green: #6fa84d;
+            --cream: #faf8f3;
+            --warm-white: #fffef9;
+            --earth: #8b7355;
+            --gold: #d4af37;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            background: var(--warm-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(45, 80, 22, 0.15);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .hero {
+            background: linear-gradient(165deg, 
+                var(--primary-green) 0%, 
+                var(--accent-green) 40%,
+                var(--light-green) 100%);
+            padding: 6rem 2rem 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .hero-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .special-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--primary-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .offer-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin-top: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .offer-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-items {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-items li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            color: var(--text-medium);
+        }
+
+        .offer-items li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--light-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .price-highlight {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+        }
+
+        .price-highlight .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1;
+        }
+
+        .price-highlight .label {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .double-option {
+            font-size: 1rem;
+            color: var(--text-medium);
+            padding: 1rem;
+            background: var(--cream);
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .double-option strong {
+            color: var(--accent-green);
+            font-size: 1.3rem;
+        }
+
+        .best-deal {
+            text-align: center;
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .aeration-only-price {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(74, 124, 48, 0.1) 0%, rgba(111, 168, 77, 0.1) 100%);
+            border-left: 4px solid var(--accent-green);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-medium);
+        }
+
+        .aeration-only-price strong {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(45, 80, 22, 0.4);
+            background: var(--accent-green);
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 124, 48, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .contact-info p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-phone {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-phone:hover {
+            color: var(--light-green);
+        }
+
+        .service-areas {
+            margin-top: 1.5rem;
+        }
+
+        .service-areas h4 {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .areas-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-medium);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-subtitle {
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--warm-white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(74, 124, 48, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.3);
+        }
+
+        .submit-button:hover {
+            background: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(45, 80, 22, 0.4);
+        }
+
+        .recaptcha-notice {
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        .recaptcha-notice a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .footer {
+            background: var(--primary-green);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 4rem 1.5rem 5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .offer-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .price-highlight .price {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .areas-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Shangri Lawn</div>
+        </div>
+    </header>
+
+    <div class="hero-image-section">
+        <img src="https://img1.wsimg.com/isteam/ip/a1b3472a-2f33-49e8-9c5e-2d3378edbfa4/Aeration.jpg/:/cr=t:9.54%25,l:0%25,w:100%25,h:80.91%25" alt="Professional Lawn Aerator Equipment" class="hero-main-image">
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="special-badge">🌱 Limited Time Spring Special</div>
+            <h1>The Spring Special</h1>
+            <p class="hero-subtitle">Prepare your lawn for the growing season with our comprehensive three-step treatment package.</p>
+            
+            <div class="offer-box">
+                <h3>Complete Lawn Rejuvenation Package</h3>
+                <ul class="offer-items">
+                    <li>Deep Plug Aeration</li>
+                    <li>Spring Fertilizer</li>
+                    <li>Premium Overseeding</li>
+                </ul>
+                
+                <div class="price-highlight">
+                    <div>
+                        <div class="price">$150</div>
+                        <div class="label">All Three Services</div>
+                    </div>
+                </div>
+
+                <div class="double-option">
+                    Upgrade to <strong>Double Overseed</strong> for just <strong>$200</strong>
+                </div>
+
+                <p class="best-deal">✨ The Best Deal in Denver ✨</p>
+
+                <div class="aeration-only-price">
+                    <strong>Aeration Only</strong> starting at <strong>$50</strong> (smaller/average lawns)
+                </div>
+
+                <a href="#contact" class="cta-button">Schedule Your Service</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">3 Steps to a Lush, Healthy Lawn</h2>
+        <p class="section-subtitle">Our proven process delivers professional results that transform your outdoor space into the envy of the neighborhood.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://img1.wsimg.com/isteam/ip/a1b3472a-2f33-49e8-9c5e-2d3378edbfa4/Aeration.jpg/:/cr=t:9.54%25,l:0%25,w:100%25,h:80.91%25/rs=w:600,h:300,cg:true" alt="Deep Plug Aeration" class="service-image">
+                <div class="service-content">
+                    <h3>Deep Plug Aeration</h3>
+                    <p>We use professional-grade equipment to extract deep soil plugs, allowing vital air, water, and nutrients to penetrate directly to your grass roots. This process breaks up compacted soil, improves drainage, and creates the perfect foundation for a thriving lawn.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://img1.wsimg.com/isteam/ip/a1b3472a-2f33-49e8-9c5e-2d3378edbfa4/lawn-fertilization-1.webp/:/cr=t:2.78%25,l:0%25,w:100%25,h:94.44%25/rs=w:600,h:300,cg:true" alt="Organic Fertilizer" class="service-image">
+                <div class="service-content">
+                    <h3>Organic Fertilizer</h3>
+                    <p>Our premium organic fertilizer is crafted from natural ingredients, making it completely safe for pets, children, and the environment. Its slow-release formula provides sustained nutrition throughout the growing season, promoting deep root development and vibrant green growth.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://img1.wsimg.com/isteam/ip/a1b3472a-2f33-49e8-9c5e-2d3378edbfa4/2021-08-overseeding-feeding-lawn-b-1200x800.webp/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:600,h:300,cg:true" alt="Professional Overseeding" class="service-image">
+                <div class="service-content">
+                    <h3>Premium Overseeding</h3>
+                    <p>We strategically distribute high-quality grass seed across your entire lawn to fill in thin spots and increase turf density. Spring conditions provide ideal moisture and temperature for rapid germination, resulting in a thick, lush lawn that naturally crowds out weeds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Transform Your Lawn This Spring</h2>
+                <p>Ready to give your lawn the professional care it deserves? Get a free quote and schedule your service today. Our expert team serves the entire South Denver Metro area with reliable, high-quality lawn care.</p>
+                
+                <div class="contact-details">
+                    <h3>Call or Text</h3>
+                    <a href="tel:7209854924" class="contact-phone">(720) 985-4924</a>
+                    
+                    <div class="service-areas">
+                        <h4>We Proudly Serve</h4>
+                        <div class="areas-list">
+                            <div>• Highlands Ranch</div>
+                            <div>• Littleton</div>
+                            <div>• Centennial</div>
+                            <div>• Greenwood Village</div>
+                            <div>• Lone Tree</div>
+                            <div>• Aurora</div>
+                            <div>• Parker</div>
+                            <div>• Castle Pines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h3>Get Your Free Quote</h3>
+                <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Service Address (Street, City, Zip)</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St, Parker, CO 80138">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lawn-size">Lawn Size</label>
+                        <select id="lawn-size" name="lawn-size">
+                            <option value="">Select size...</option>
+                            <option value="small">Small (under 5,000 sq ft)</option>
+                            <option value="average">Average (5,000-10,000 sq ft)</option>
+                            <option value="large">Large (over 10,000 sq ft)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select service...</option>
+                            <option value="spring-special">Spring Special Package</option>
+                            <option value="spring-double">Spring Special (Double Overseed)</option>
+                            <option value="aeration-only">Aeration Only</option>
+                            <option value="custom">Custom Quote</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Notes (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Tell us about any specific concerns or questions..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Get My Free Quote</button>
+
+                <p class="recaptcha-notice">
+                    This site is protected by reCAPTCHA and the Google 
+                    <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and 
+                    <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Shangri Lawn - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Send to Formspree (you'll need to set this up)
+            fetch('https://formspree.io/f/xlgwbvko', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you! We\'ve received your request and will contact you within 24 hours to provide your free quote.');
+                    this.reset();
+                } else {
+                    alert('Oops! There was a problem submitting your form. Please call us at (720) 985-4924.');
+                }
+            })
+            .catch(error => {
+                alert('Oops! There was a problem submitting your form. Please call us at (720) 985-4924.');
+            });
+        });
+
+        // Add intersection observer for fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
